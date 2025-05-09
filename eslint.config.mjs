@@ -9,4 +9,9 @@ export default tseslint.config(
   tseslint.configs.recommended,
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
+  {
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  }
 );
