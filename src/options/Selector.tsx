@@ -1,11 +1,10 @@
-import * as PropTypes from 'prop-types'
-import * as React from 'react'
-
+import React, { useContext, useEffect } from 'react'
 import Option from './Option'
 import OptionContext from './OptionContext'
+import { ExtendedComponent } from '../models/ExtendedComponent'
 
-function getComponentOptionValue (component: React.ComponentClass) {
-  const optionValue = (component as any).optionValue
+function getComponentOptionValue(component: ExtendedComponent) {
+  const optionValue = component.optionValue
   if (!optionValue) {
     throw new Error(`optionValue should be provided for ${component}`)
   }
@@ -14,74 +13,65 @@ function getComponentOptionValue (component: React.ComponentClass) {
 
 export interface Props {
   option: Option
-  defaultOption: React.ComponentClass | string
+  defaultOption: ExtendedComponent
+  children?: React.ReactNode
 }
 
-export default class Selector extends React.Component<Props> {
-  static contextTypes = {
-    optionContext: PropTypes.instanceOf(OptionContext)
+const Selector: React.FC<Props> = ({ option, defaultOption, children }) => {
+  const optionContext = useContext(OptionContext)
+
+  if (!optionContext) {
+    throw new Error('OptionContext is not available')
   }
 
-  private get optionContext (): OptionContext {
-    return this.context.optionContext
-  }
+  const defaultValue =
+    typeof defaultOption === 'string'
+      ? defaultOption
+      : getComponentOptionValue(defaultOption)
+  optionContext.dispatch({
+    type: 'SET_DEFAULT_VALUE',
+    key: option.key,
+    payload: defaultValue,
+  })
 
-  UNSAFE_componentWillMount () {
-    const { option, defaultOption } = this.props
-    const { optionContext } = this
-    const defaultValue = (
-      typeof defaultOption === 'string' ?
-      defaultOption : getComponentOptionValue(defaultOption)
-    )
-    optionContext.addStateChangeListener(this.optionContextUpdate)
-    optionContext.optionEnter(option.key)
-    const optionState = optionContext.getOptionState(option.key)
-    this.updateOptionValues()
-    if (optionState) {
-      optionContext.setDefaultValue(option.key, defaultValue)
+  useEffect(() => {
+    optionContext.dispatch({ type: 'OPTION_ENTER', key: option.key })
+
+    return () => {
+      optionContext.dispatch({ type: 'OPTION_EXIT', key: option.key })
     }
-  }
+  }, [option.key, optionContext])
 
-  UNSAFE_componentWillUpdate (nextProps: Props & { children?: React.ReactNode }) {
-    this.updateOptionValues(nextProps)
-  }
-
-  componentWillUnmount () {
-    this.optionContext.removeStateChangeListener(this.optionContextUpdate)
-    this.optionContext.optionExit(this.props.option.key)
-  }
-
-  render () {
-    let result: React.ReactNode | null = null
-    const { option, children } = this.props
-    const value = this.optionContext.getValue(option.key)!
-    React.Children.forEach(children, child => {
-      if (getComponentOptionValue((child as any).type) === value) {
-        result = child
+  useEffect(() => {
+    const values = React.Children.map(children, (child) => {
+      if (React.isValidElement(child)) {
+        return getComponentOptionValue(child.type as ExtendedComponent)
       }
+      throw new Error('Invalid child element')
     })
-    return result
-  }
 
-  private optionContextUpdate = () => {
-    this.forceUpdate()
-  }
-
-  private updateOptionValues (
-    nextProps?: Props & { children?: React.ReactNode }
-  ) {
-    if (nextProps && this.props.children === nextProps.children) {
-      return
-    }
-    const { option, children } = this.props
-    const values = React.Children.map(
-      children,
-      // TODO: also validate and throw error if we don't see optionValue
-      child => getComponentOptionValue((child as any).type)
-    )
     if (new Set(values).size !== values?.length) {
       throw new Error('Duplicate values')
     }
-    this.optionContext.setOptions(option.key, values)
-  }
+
+    optionContext.dispatch({
+      type: 'SET_OPTIONS',
+      key: option.key,
+      payload: values,
+    })
+  }, [children, option.key, optionContext])
+
+  let result: React.ReactNode | null = null
+  React.Children.forEach(children, (child) => {
+    if (
+      React.isValidElement(child) &&
+      getComponentOptionValue(child.type as ExtendedComponent) === defaultValue
+    ) {
+      result = child
+    }
+  })
+
+  return <>{result}</>
 }
+
+export default Selector

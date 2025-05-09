@@ -69,7 +69,7 @@ export const SkinOption = new Option({
   label: '🎨 Skin',
 })
 
-export const allOptions = [
+export const allOptions: Option[] = [
   TopOption,
   AccessoriesOption,
   HatColorOption,
