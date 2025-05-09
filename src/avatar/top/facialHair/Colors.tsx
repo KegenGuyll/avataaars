@@ -1,5 +1,6 @@
 import { FacialHairColor, Selector } from '../../../options'
 import makeColor from '../../../utils/makeColor'
+import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
 export interface Props {
   maskID: string
@@ -17,7 +18,8 @@ const Platinum = makeColor('Platinum', '#ECDCBF', id)
 const Red = makeColor('Red', '#C93305', id)
 const SilverGray = makeColor('SilverGray', '#E8E1E1', id)
 
-export default function Colors({ maskID }: Props) {
+// eslint-disable-next-line react/prop-types
+const Colors: ExtendedComponent<{ maskID: string }> = ({ maskID }) => {
   return (
     <Selector option={FacialHairColor} defaultOption={BrownDark}>
       <Auburn maskID={maskID} />
@@ -32,3 +34,7 @@ export default function Colors({ maskID }: Props) {
     </Selector>
   )
 }
+
+Colors.optionValue = 'Colors'
+
+export default Colors
