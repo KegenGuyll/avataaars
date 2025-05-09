@@ -1,9 +1,10 @@
 import * as React from 'react'
+import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
-export default class Blank extends React.Component {
-  static optionValue = 'Blank'
-
-  render () {
-    return null
-  }
+const Blank: ExtendedComponent = () => {
+  return null
 }
+
+Blank.optionValue = 'Blank'
+
+export default Blank
