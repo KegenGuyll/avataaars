@@ -1,10 +1,7 @@
 import React from 'react'
+import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
-type Props = {
-  optionValue?: string
-}
-
-const Angry: React.FC<Props> = ({ optionValue = 'Angry' }) => {
+const Angry: ExtendedComponent = () => {
   return (
     <g id='Eyebrow/Outline/Angry' fillOpacity='0.599999964' fillRule='nonzero'>
       <path
@@ -19,5 +16,7 @@ const Angry: React.FC<Props> = ({ optionValue = 'Angry' }) => {
     </g>
   )
 }
+
+Angry.optionValue = 'Angry'
 
 export default Angry
