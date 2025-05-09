@@ -13,7 +13,8 @@ function getComponentOptionValue(component: ExtendedComponent) {
 
 export interface Props {
   option: Option
-  defaultOption: ExtendedComponent
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  defaultOption: ExtendedComponent<any>
   children?: React.ReactNode
 }
 
