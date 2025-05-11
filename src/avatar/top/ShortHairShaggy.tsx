@@ -1,4 +1,4 @@
-import React, { useId, ReactNode } from 'react'
+import { useId, ReactNode } from 'react'
 import FacialHair from './facialHair'
 import HairColor from './HairColor'
 import type { ExtendedComponent } from '../../models/ExtendedComponent'

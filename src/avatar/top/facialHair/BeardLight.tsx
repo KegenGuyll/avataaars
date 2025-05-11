@@ -1,10 +1,11 @@
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
+import { useId } from 'react'
 
 import Colors from './Colors'
 
 const BeardLight: ExtendedComponent = () => {
-  const mask1 = React.useId()
-  const path1 = React.useId()
+  const mask1 = useId()
+  const path1 = useId()
 
   return (
     <g id='Facial-Hair/Beard-Light' transform='translate(49.000000, 72.000000)'>

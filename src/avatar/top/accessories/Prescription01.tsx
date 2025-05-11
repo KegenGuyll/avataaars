@@ -1,7 +1,8 @@
+import { useId } from 'react'
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
 const Prescription01: ExtendedComponent = () => {
-  const filter1 = React.useId()
+  const filter1 = useId()
 
   return (
     <g

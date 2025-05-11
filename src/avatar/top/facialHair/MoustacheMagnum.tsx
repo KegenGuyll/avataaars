@@ -1,10 +1,11 @@
+import { useId } from 'react'
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
 import Colors from './Colors'
 
 const MoustacheMagnum: ExtendedComponent = () => {
-  const mask1 = React.useId()
-  const path1 = React.useId()
+  const mask1 = useId()
+  const path1 = useId()
 
   return (
     <g

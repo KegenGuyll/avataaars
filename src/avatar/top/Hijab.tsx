@@ -1,4 +1,4 @@
-import React from 'react'
+import { useId } from 'react'
 
 import HatColor from './HatColor'
 import { ExtendedComponent } from '../../models/ExtendedComponent'
@@ -8,11 +8,11 @@ interface HijabProps {
 }
 
 const Hijab: ExtendedComponent<HijabProps> = ({ children }: HijabProps) => {
-  const filter1 = React.useId()
-  const mask1 = React.useId()
-  const mask2 = React.useId()
-  const path1 = React.useId()
-  const path2 = React.useId()
+  const filter1 = useId()
+  const mask1 = useId()
+  const mask2 = useId()
+  const path1 = useId()
+  const path2 = useId()
 
   return (
     <g id='Top' strokeWidth='1' fillRule='evenodd'>

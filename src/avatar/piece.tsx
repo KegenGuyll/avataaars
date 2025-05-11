@@ -30,7 +30,6 @@ export type PieceType =
 export interface PieceProps {
   pieceSize?: string
   pieceType?: PieceType
-  avatarStyle: AvatarStyle
   style?: React.CSSProperties
   viewBox?: string
 }
@@ -38,7 +37,6 @@ export interface PieceProps {
 const PieceComponent: React.FC<PieceProps> = ({
   pieceSize,
   pieceType,
-  avatarStyle,
   style,
   viewBox,
 }: PieceProps) => (

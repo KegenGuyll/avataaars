@@ -1,3 +1,4 @@
+import React from 'react'
 import Close from './Close'
 import Cry from './Cry'
 import Default from './Default'
@@ -12,23 +13,21 @@ import Wink from './Wink'
 import WinkWacky from './WinkWacky'
 import { EyesOption, Selector } from '../../../options'
 
-export default class Eyes extends React.Component {
-  render() {
-    return (
-      <Selector defaultOption={Default} option={EyesOption}>
-        <Close />
-        <Cry />
-        <Default />
-        <Dizzy />
-        <EyeRoll />
-        <Happy />
-        <Hearts />
-        <Side />
-        <Squint />
-        <Surprised />
-        <Wink />
-        <WinkWacky />
-      </Selector>
-    )
-  }
-}
+const Eyes: React.FC = () => (
+  <Selector defaultOption={Default} option={EyesOption}>
+    <Close />
+    <Cry />
+    <Default />
+    <Dizzy />
+    <EyeRoll />
+    <Happy />
+    <Hearts />
+    <Side />
+    <Squint />
+    <Surprised />
+    <Wink />
+    <WinkWacky />
+  </Selector>
+)
+
+export default Eyes

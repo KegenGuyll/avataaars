@@ -1,10 +1,11 @@
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
+import { useId } from 'react'
 
 const Wayfarers: ExtendedComponent = () => {
-  const path1 = React.useId()
-  const path2 = React.useId()
-  const filter1 = React.useId()
-  const linearGradient1 = React.useId()
+  const path1 = useId()
+  const path2 = useId()
+  const filter1 = useId()
+  const linearGradient1 = useId()
 
   return (
     <g

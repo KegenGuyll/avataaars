@@ -1,4 +1,4 @@
-import React, { useId } from 'react'
+import { useId } from 'react'
 
 import Accessories from './top/accessories'
 import Clothe from './clothes'
@@ -21,7 +21,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   avatarStyle,
   className,
   style,
-}) => {
+}: AvatarProps) => {
   const id = useId()
   const path1 = `${id}-react-path-1`
   const path2 = `${id}-react-path-2`

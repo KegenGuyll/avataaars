@@ -1,8 +1,9 @@
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
+import { useId } from 'react'
 
 const Grimace: ExtendedComponent = () => {
-  const path1 = React.useId()
-  const mask1 = React.useId()
+  const path1 = useId()
+  const mask1 = useId()
 
   return (
     <g id='Mouth/Grimace' transform='translate(2.000000, 52.000000)'>

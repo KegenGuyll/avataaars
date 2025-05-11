@@ -1,10 +1,11 @@
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
+import { useId } from 'react'
 
 import Colors from './Colors'
 
 const BeardMajestic: ExtendedComponent = () => {
-  const mask1 = React.useId()
-  const path1 = React.useId()
+  const mask1 = useId()
+  const path1 = useId()
 
   return (
     <g

@@ -1,8 +1,9 @@
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
+import { useId } from 'react'
 
 const Round: ExtendedComponent = () => {
-  const path1 = React.useId()
-  const filter1 = React.useId()
+  const path1 = useId()
+  const filter1 = useId()
 
   return (
     <g

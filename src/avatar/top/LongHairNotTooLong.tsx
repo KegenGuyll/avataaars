@@ -1,4 +1,4 @@
-import React, { useId } from 'react'
+import { useId } from 'react'
 import type { ReactNode } from 'react'
 import FacialHair from './facialHair'
 import HairColor from './HairColor'

@@ -45,12 +45,11 @@ const AvatarComponent: React.FC<Props> = (props) => {
 }
 
 const Piece: React.FC<Props> = (props) => {
-  const { avatarStyle, style, pieceType, pieceSize, viewBox }: Props = props
+  const { style, pieceType, pieceSize, viewBox }: Props = props
 
   return (
     <OptionProvider options={allOptions}>
       <PieceComponent
-        avatarStyle={avatarStyle as AvatarStyle}
         style={style}
         pieceType={pieceType}
         pieceSize={pieceSize}

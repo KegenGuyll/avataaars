@@ -1,7 +1,8 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import Option from './Option'
 import OptionContext from './OptionContext'
 import { ExtendedComponent } from '../models/ExtendedComponent'
+import React from 'react'
 
 function getComponentOptionValue(component: ExtendedComponent) {
   const optionValue = component.optionValue
@@ -18,7 +19,11 @@ export interface Props {
   children?: React.ReactNode
 }
 
-const Selector: React.FC<Props> = ({ option, defaultOption, children }) => {
+const Selector: React.FC<Props> = ({
+  option,
+  defaultOption,
+  children,
+}: Props) => {
   const optionContext = useContext(OptionContext)
 
   if (!optionContext) {

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useId } from 'react'
 import Colors from './Colors'
 import Graphics from './Graphics'

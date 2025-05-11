@@ -1,4 +1,3 @@
-import React from 'react'
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
 const RaisedExcitedNatural: ExtendedComponent = () => {

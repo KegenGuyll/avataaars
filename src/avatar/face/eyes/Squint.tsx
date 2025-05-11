@@ -1,12 +1,12 @@
-import React from 'react'
+import { useId } from 'react'
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
-import { uniqueId } from 'lodash'
 
 const Squint: ExtendedComponent = () => {
-  const path1 = uniqueId('react-path-')
-  const path2 = uniqueId('react-path-')
-  const mask1 = uniqueId('react-mask-')
-  const mask2 = uniqueId('react-mask-')
+  const id = useId()
+  const path1 = `react-path-1-${id}`
+  const path2 = `react-path-2-${id}`
+  const mask1 = `react-mask-1-${id}`
+  const mask2 = `react-mask-2-${id}`
 
   return (
     <g id='Eyes/Squint-😊' transform='translate(0.000000, 8.000000)'>
@@ -22,9 +22,9 @@ const Squint: ExtendedComponent = () => {
       </defs>
       <g id='Eye' transform='translate(16.000000, 13.000000)'>
         <mask id={mask1} fill='white'>
-          <use xlinkHref={'#' + path1} />
+          <use xlinkHref={`#${path1}`} />
         </mask>
-        <use id='The-white-stuff' fill='#FFFFFF' xlinkHref={'#' + path1} />
+        <use id='The-white-stuff' fill='#FFFFFF' xlinkHref={`#${path1}`} />
         <circle
           fillOpacity='0.699999988'
           fill='#000000'
@@ -36,9 +36,9 @@ const Squint: ExtendedComponent = () => {
       </g>
       <g id='Eye' transform='translate(68.000000, 13.000000)'>
         <mask id={mask2} fill='white'>
-          <use xlinkHref={'#' + path2} />
+          <use xlinkHref={`#${path2}`} />
         </mask>
-        <use id='Eyeball-Mask' fill='#FFFFFF' xlinkHref={'#' + path2} />
+        <use id='Eyeball-Mask' fill='#FFFFFF' xlinkHref={`#${path2}`} />
         <circle
           fillOpacity='0.699999988'
           fill='#000000'

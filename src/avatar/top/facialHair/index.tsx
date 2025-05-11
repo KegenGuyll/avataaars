@@ -5,18 +5,17 @@ import Blank from './Blank'
 import MoustacheFancy from './MoustacheFancy'
 import MoustacheMagnum from './MoustacheMagnum'
 import { FacialHairOption, Selector } from '../../../options'
+import React from 'react'
 
-export default class FacialHair extends React.Component {
-  render() {
-    return (
-      <Selector option={FacialHairOption} defaultOption={Blank}>
-        <Blank />
-        <BeardMedium />
-        <BeardLight />
-        <BeardMajestic />
-        <MoustacheFancy />
-        <MoustacheMagnum />
-      </Selector>
-    )
-  }
-}
+const FacialHair: React.FC = () => (
+  <Selector option={FacialHairOption} defaultOption={Blank}>
+    <Blank />
+    <BeardMedium />
+    <BeardLight />
+    <BeardMajestic />
+    <MoustacheFancy />
+    <MoustacheMagnum />
+  </Selector>
+)
+
+export default FacialHair
