@@ -1,6 +1,7 @@
 import React from "react"
 
-interface ExtendedComponent<P = Record<string, unknown>> extends React.FC<P> {
+type ExtendedComponent<P = Record<string, unknown>> = React.FC<P> & {
+  children?: React.ReactNode
   optionValue: string
   displayName?: string
 }
