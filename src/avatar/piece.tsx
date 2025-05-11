@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import Clothe from './clothes'
 import Graphics from './clothes/Graphics'
 import Accessories from './top/accessories'
@@ -16,20 +14,22 @@ export enum AvatarStyle {
   Transparent = 'Transparent',
 }
 
+export type PieceType =
+  | 'top'
+  | 'clothe'
+  | 'graphics'
+  | 'accessories'
+  | 'accesories'
+  | 'facialHair'
+  | 'eyes'
+  | 'eyebrows'
+  | 'mouth'
+  | 'nose'
+  | 'skin'
+
 export interface PieceProps {
   pieceSize?: string
-  pieceType?:
-    | 'top'
-    | 'clothe'
-    | 'graphics'
-    | 'accessories'
-    | 'accesories'
-    | 'facialHair'
-    | 'eyes'
-    | 'eyebrows'
-    | 'mouth'
-    | 'nose'
-    | 'skin'
+  pieceType?: PieceType
   avatarStyle: AvatarStyle
   style?: React.CSSProperties
   viewBox?: string
@@ -41,7 +41,7 @@ const PieceComponent: React.FC<PieceProps> = ({
   avatarStyle,
   style,
   viewBox,
-}) => (
+}: PieceProps) => (
   <svg
     style={style}
     width={pieceSize ? `${pieceSize}px` : undefined}

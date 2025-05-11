@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import BlazerShirt from './BlazerShirt'
 import BlazerSweater from './BlazerSweater'
 import CollarSweater from './CollarSweater'
@@ -10,21 +8,20 @@ import ShirtCrewNeck from './ShirtCrewNeck'
 import ShirtScoopNeck from './ShirtScoopNeck'
 import ShirtVNeck from './ShirtVNeck'
 import { ClotheOption, Selector } from '../../options'
+import React from 'react'
 
-export default class Clothes extends React.Component {
-  render () {
-    return (
-      <Selector option={ClotheOption} defaultOption={BlazerShirt}>
-        <BlazerShirt />
-        <BlazerSweater />
-        <CollarSweater />
-        <GraphicShirt />
-        <Hoodie />
-        <Overall />
-        <ShirtCrewNeck />
-        <ShirtScoopNeck />
-        <ShirtVNeck />
-      </Selector>
-    )
-  }
-}
+const Clothes: React.FC = () => (
+  <Selector option={ClotheOption} defaultOption={BlazerShirt}>
+    <BlazerShirt />
+    <BlazerSweater />
+    <CollarSweater />
+    <GraphicShirt />
+    <Hoodie />
+    <Overall />
+    <ShirtCrewNeck />
+    <ShirtScoopNeck />
+    <ShirtVNeck />
+  </Selector>
+)
+
+export default Clothes

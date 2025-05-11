@@ -1,10 +1,10 @@
-import * as React from 'react'
 import FacialHair from './facialHair'
 import { ExtendedComponent } from '../../models/ExtendedComponent'
+import { useId } from 'react'
 
 const Eyepatch: ExtendedComponent = () => {
-  const mask1 = React.useId()
-  const path1 = React.useId()
+  const mask1 = useId()
+  const path1 = useId()
 
   return (
     <g id='Top' strokeWidth='1' fillRule='evenodd'>

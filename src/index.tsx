@@ -6,7 +6,8 @@ import { allOptions } from './options'
 export { default as Avatar, AvatarStyle } from './avatar'
 export { Option, allOptions } from './options'
 
-import { default as PieceComponent } from './avatar/piece'
+import PieceComponent from './avatar/piece'
+import { PieceType } from './avatar/piece'
 
 export interface Props {
   avatarStyle: string
@@ -24,13 +25,13 @@ export interface Props {
   eyebrowType?: string
   mouthType?: string
   skinColor?: string
-  pieceType?: string
+  pieceType?: PieceType
   pieceSize?: string
   viewBox?: string
 }
 
 const AvatarComponent: React.FC<Props> = (props) => {
-  const { avatarStyle, style, className } = props
+  const { avatarStyle, style, className }: Props = props
 
   return (
     <OptionProvider options={allOptions}>
@@ -44,7 +45,7 @@ const AvatarComponent: React.FC<Props> = (props) => {
 }
 
 const Piece: React.FC<Props> = (props) => {
-  const { avatarStyle, style, pieceType, pieceSize, viewBox } = props
+  const { avatarStyle, style, pieceType, pieceSize, viewBox }: Props = props
 
   return (
     <OptionProvider options={allOptions}>

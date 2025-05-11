@@ -1,7 +1,6 @@
-import * as React from 'react'
-
 import FacialHair from './facialHair'
 import { ExtendedComponent } from '../../models/ExtendedComponent'
+import { useId } from 'react'
 
 type LongHairFridaProps = {
   children?: React.ReactNode
@@ -10,7 +9,7 @@ type LongHairFridaProps = {
 const LongHairFrida: ExtendedComponent<LongHairFridaProps> = ({
   children,
 }: LongHairFridaProps) => {
-  const id = React.useId()
+  const id = useId()
   const filter1 = `react-filter1-${id}`
   const filter2 = `react-filter2-${id}`
   const filter3 = `react-filter3-${id}`

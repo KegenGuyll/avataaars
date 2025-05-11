@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import Concerned from './Concerned'
 import Default from './Default'
 import Disbelief from './Disbelief'
@@ -15,7 +13,7 @@ import Vomit from './Vomit'
 import { MouthOption, Selector } from '../../../options'
 
 export default class Mouth extends React.Component {
-  render () {
+  render() {
     return (
       <Selector defaultOption={Default} option={MouthOption}>
         <Concerned />

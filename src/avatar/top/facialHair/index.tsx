@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import BeardLight from './BeardLight'
 import BeardMajestic from './BeardMajestic'
 import BeardMedium from './BeardMedium'
@@ -9,7 +7,7 @@ import MoustacheMagnum from './MoustacheMagnum'
 import { FacialHairOption, Selector } from '../../../options'
 
 export default class FacialHair extends React.Component {
-  render () {
+  render() {
     return (
       <Selector option={FacialHairOption} defaultOption={Blank}>
         <Blank />

@@ -1,9 +1,9 @@
-import * as React from 'react'
+import { useId } from 'react'
 import { ExtendedComponent } from '../../models/ExtendedComponent'
 
 const BlazerShirt: ExtendedComponent = () => {
-  const path1 = React.useId()
-  const mask1 = React.useId()
+  const path1 = useId()
+  const mask1 = useId()
 
   return (
     <g id='Clothing/Blazer-+-Shirt' transform='translate(0.000000, 170.000000)'>

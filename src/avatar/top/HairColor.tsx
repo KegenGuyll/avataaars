@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { HairColorOption, Selector } from '../../options'
 import makeColor from '../../utils/makeColor'
 

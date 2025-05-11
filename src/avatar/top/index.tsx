@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import Eyepatch from './Eyepatch'
 import Hat from './Hat'
 import Hijab from './Hijab'
@@ -37,50 +35,50 @@ import WinterHat3 from './WinterHat3'
 import WinterHat4 from './WinterHat4'
 import { Selector, TopOption } from '../../options'
 
-export default class Top extends React.Component {
-  render () {
-    const { children } = this.props
-    return (
-      <Selector defaultOption={LongHairStraight} option={TopOption}>
-        <NoHair>{children}</NoHair>
-        <Eyepatch>{children}</Eyepatch>
-        <Hat>{children}</Hat>
-        <Hijab>{children}</Hijab>
-        <Turban>{children}</Turban>
-        <WinterHat1>{children}</WinterHat1>
-        <WinterHat2>{children}</WinterHat2>
-        <WinterHat3>{children}</WinterHat3>
-        <WinterHat4>{children}</WinterHat4>
-        <LongHairBigHair>{children}</LongHairBigHair>
-        <LongHairBob>{children}</LongHairBob>
-        <LongHairBun>{children}</LongHairBun>
-        <LongHairCurly>{children}</LongHairCurly>
-        <LongHairCurvy>{children}</LongHairCurvy>
-        <LongHairDreads>{children}</LongHairDreads>
-        <LongHairFrida>{children}</LongHairFrida>
-        <LongHairFro>{children}</LongHairFro>
-        <LongHairFroBand>{children}</LongHairFroBand>
-        <LongHairNotTooLong>{children}</LongHairNotTooLong>
-        <LongHairShavedSides>{children}</LongHairShavedSides>
-        <LongHairMiaWallace>{children}</LongHairMiaWallace>
-        <LongHairStraight>{children}</LongHairStraight>
-        <LongHairStraight2>{children}</LongHairStraight2>
-        <LongHairStraightStrand>{children}</LongHairStraightStrand>
-        <ShortHairDreads01>{children}</ShortHairDreads01>
-        <ShortHairDreads02>{children}</ShortHairDreads02>
-        <ShortHairFrizzle>{children}</ShortHairFrizzle>
-        {/*
-        XXX: broken, fix it later
-        <ShortHairShaggy>{children}</ShortHairShaggy>*/}
-        <ShortHairShaggyMullet>{children}</ShortHairShaggyMullet>
-        <ShortHairShortCurly>{children}</ShortHairShortCurly>
-        <ShortHairShortFlat>{children}</ShortHairShortFlat>
-        <ShortHairShortRound>{children}</ShortHairShortRound>
-        <ShortHairShortWaved>{children}</ShortHairShortWaved>
-        <ShortHairSides>{children}</ShortHairSides>
-        <ShortHairTheCaesar>{children}</ShortHairTheCaesar>
-        <ShortHairTheCaesarSidePart>{children}</ShortHairTheCaesarSidePart>
-      </Selector>
-    )
-  }
+interface TopProps {
+  children?: React.ReactNode
 }
+
+const Top: React.FC<TopProps> = ({ children }) => (
+  <Selector defaultOption={LongHairStraight} option={TopOption}>
+    <NoHair>{children}</NoHair>
+    <Eyepatch>{children}</Eyepatch>
+    <Hat>{children}</Hat>
+    <Hijab>{children}</Hijab>
+    <Turban>{children}</Turban>
+    <WinterHat1>{children}</WinterHat1>
+    <WinterHat2>{children}</WinterHat2>
+    <WinterHat3>{children}</WinterHat3>
+    <WinterHat4>{children}</WinterHat4>
+    <LongHairBigHair>{children}</LongHairBigHair>
+    <LongHairBob>{children}</LongHairBob>
+    <LongHairBun>{children}</LongHairBun>
+    <LongHairCurly>{children}</LongHairCurly>
+    <LongHairCurvy>{children}</LongHairCurvy>
+    <LongHairDreads>{children}</LongHairDreads>
+    <LongHairFrida>{children}</LongHairFrida>
+    <LongHairFro>{children}</LongHairFro>
+    <LongHairFroBand>{children}</LongHairFroBand>
+    <LongHairNotTooLong>{children}</LongHairNotTooLong>
+    <LongHairShavedSides>{children}</LongHairShavedSides>
+    <LongHairMiaWallace>{children}</LongHairMiaWallace>
+    <LongHairStraight>{children}</LongHairStraight>
+    <LongHairStraight2>{children}</LongHairStraight2>
+    <LongHairStraightStrand>{children}</LongHairStraightStrand>
+    <ShortHairDreads01>{children}</ShortHairDreads01>
+    <ShortHairDreads02>{children}</ShortHairDreads02>
+    <ShortHairFrizzle>{children}</ShortHairFrizzle>
+    {/* XXX: broken, fix it later
+    <ShortHairShaggy>{children}</ShortHairShaggy> */}
+    <ShortHairShaggyMullet>{children}</ShortHairShaggyMullet>
+    <ShortHairShortCurly>{children}</ShortHairShortCurly>
+    <ShortHairShortFlat>{children}</ShortHairShortFlat>
+    <ShortHairShortRound>{children}</ShortHairShortRound>
+    <ShortHairShortWaved>{children}</ShortHairShortWaved>
+    <ShortHairSides>{children}</ShortHairSides>
+    <ShortHairTheCaesar>{children}</ShortHairTheCaesar>
+    <ShortHairTheCaesarSidePart>{children}</ShortHairTheCaesarSidePart>
+  </Selector>
+)
+
+export default Top

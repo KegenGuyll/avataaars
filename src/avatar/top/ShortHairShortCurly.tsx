@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { useId, ReactNode } from 'react'
 import FacialHair from './facialHair'
 import HairColor from './HairColor'

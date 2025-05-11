@@ -1,18 +1,18 @@
-import * as React from 'react'
 import FacialHair from './facialHair'
 
 import { ExtendedComponent } from '../../models/ExtendedComponent'
+import { ReactNode, useId } from 'react'
 
 interface HatProps {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 const Hat: ExtendedComponent<HatProps> = ({ children }: HatProps) => {
-  const filter1 = React.useId()
-  const mask1 = React.useId()
-  const mask2 = React.useId()
-  const path1 = React.useId()
-  const path2 = React.useId()
+  const filter1 = useId()
+  const mask1 = useId()
+  const mask2 = useId()
+  const path1 = useId()
+  const path2 = useId()
 
   return (
     <g id='Top' strokeWidth='1' fillRule='evenodd'>

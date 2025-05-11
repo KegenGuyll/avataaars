@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
 const Default: ExtendedComponent = () => {

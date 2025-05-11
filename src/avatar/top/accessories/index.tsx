@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import Blank from './Blank'
 import Kurt from './Kurt'
 import Prescription01 from './Prescription01'
@@ -10,7 +8,7 @@ import Wayfarers from './Wayfarers'
 import { AccessoriesOption, Selector } from '../../../options'
 
 export default class Accessories extends React.Component {
-  render () {
+  render() {
     return (
       <Selector defaultOption={Blank} option={AccessoriesOption}>
         <Blank />
