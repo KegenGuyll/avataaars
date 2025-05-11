@@ -1,6 +1,6 @@
 # React component for Avataaars
 
-The core React component for [Avataaars Generator](https://getavataaars.com/) developed by [Kegen] and originally created by [Fang-Pen Lin](https://twitter.com/fangpenlin), based on the Sketch library [Avataaars](https://avataaars.com/) designed by [Pablo Stanley](https://twitter.com/pablostanley). 
+The core React component for [Avataaars Generator](https://getavataaars.com/) developed by [Kegen Guyll](https://github.com/KegenGuyll) and originally created by [Fang-Pen Lin](https://twitter.com/fangpenlin), based on the Sketch library [Avataaars](https://avataaars.com/) designed by [Pablo Stanley](https://twitter.com/pablostanley). 
 
 <p align="center"><img src='avataaars-example.png?raw=true' style='width: 300px; height: 300px;' /></p>
 
