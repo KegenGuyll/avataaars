@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { uniqueId } from 'lodash'
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
 const Prescription02: ExtendedComponent = () => {

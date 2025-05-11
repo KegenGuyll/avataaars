@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { uniqueId } from 'lodash'
 import { ExtendedComponent } from '../../../models/ExtendedComponent'
 
 import Colors from './Colors'
