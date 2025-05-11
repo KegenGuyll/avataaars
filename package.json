@@ -1,5 +1,5 @@
 {
-  "name": "avataaars",
+  "name": "updated-avataaars",
   "version": "2.0.0",
   "description": "React component for avataaars",
   "main": "dist/index.js",
@@ -12,8 +12,8 @@
     "react",
     "avatar"
   ],
-  "repository": "git@github.com:fangpenlin/avataaars.git",
-  "author": "Fang-Pen Lin <hello@fangpenlin.com>",
+  "repository": "git@github.com:KegenGuyll/avataaars.git",
+  "author": "KegenGuyll",
   "license": "MIT",
   "peerDependencies": {
     "react": "^19.1.0"
