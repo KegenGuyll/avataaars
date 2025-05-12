@@ -3,7 +3,6 @@ import { OptionProvider } from './options/OptionContext'
 import Avatar, { AvatarStyle } from './avatar'
 import { allOptions } from './options'
 
-export { default as Avatar, AvatarStyle } from './avatar'
 export { Option, allOptions } from './options'
 
 import PieceComponent from './avatar/piece'
@@ -59,4 +58,5 @@ const Piece: React.FC<Props> = (props) => {
   )
 }
 
-export { AvatarComponent, Piece }
+export { AvatarComponent, Piece, AvatarStyle }
+export default Avatar
