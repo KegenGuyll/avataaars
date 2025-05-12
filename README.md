@@ -19,13 +19,13 @@ The core React component for [Avataaars Generator](https://getavataaars.com/) de
 First, you need to install the avataaars component package, here you run
 
 ```
-yarn add avataaars
+yarn avataaars-kegenguyll
 ```
 
 or
 
 ```
-npm install avataaars --save
+npm install npm i avataaars-kegenguyll
 ```
 
 if you are using npm. Then, in your React app, import the Avataaar component and put it where you like it to be, for example
