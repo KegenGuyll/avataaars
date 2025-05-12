@@ -39,7 +39,7 @@ interface TopProps {
   children?: React.ReactNode
 }
 
-const Top: React.FC<TopProps> = ({ children }) => (
+const Top: React.FC<TopProps> = ({ children }: TopProps) => (
   <Selector defaultOption={LongHairStraight} option={TopOption}>
     <NoHair>{children}</NoHair>
     <Eyepatch>{children}</Eyepatch>

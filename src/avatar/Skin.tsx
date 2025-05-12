@@ -15,7 +15,7 @@ const Brown = makeColor('Brown', '#D08B5B', id)
 const DarkBrown = makeColor('DarkBrown', '#AE5D29', id)
 const Black = makeColor('Black', '#614335', id)
 
-const Skin: React.FC<Props> = ({ maskID }) => (
+const Skin: React.FC<Props> = ({ maskID }: Props) => (
   <Selector option={SkinOption} defaultOption={Light}>
     <Tanned maskID={maskID} />
     <Yellow maskID={maskID} />

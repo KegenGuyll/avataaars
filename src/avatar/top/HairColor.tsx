@@ -19,7 +19,7 @@ const Platinum = makeColor('Platinum', '#ECDCBF', id)
 const Red = makeColor('Red', '#C93305', id)
 const SilverGray = makeColor('SilverGray', '#E8E1E1', id)
 
-const HairColor: React.FC<Props> = ({ maskID }) => (
+const HairColor: React.FC<Props> = ({ maskID }: Props) => (
   <Selector option={HairColorOption} defaultOption={BrownDark}>
     <Auburn maskID={maskID} />
     <Black maskID={maskID} />

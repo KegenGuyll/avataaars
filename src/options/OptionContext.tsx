@@ -79,7 +79,7 @@ interface OptionProviderProps {
 export const OptionProvider: React.FC<OptionProviderProps> = ({
   options,
   children,
-}) => {
+}: OptionProviderProps) => {
   const initialState: OptionContextState = options.reduce((acc, option) => {
     acc[option.key] = { key: option.key, options: [], available: 0 }
     return acc
