@@ -1,6 +1,6 @@
 {
-  "name": "updated-avataaars",
-  "version": "2.0.0",
+  "name": "avataaars-kegenguyll",
+  "version": "1.0.0",
   "description": "React component for avataaars",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
