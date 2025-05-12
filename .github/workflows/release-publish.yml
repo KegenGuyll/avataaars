@@ -1,10 +1,11 @@
-name: Publish to npm
+name: Release and Publish to npm
 
 on:
-  workflow_dispatch:
+  release:
+    types: [created]
 
 jobs:
-  build-and-publish:
+  release-and-publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,10 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build package
-        run: npm run build
+      - name: Run semantic release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run release
 
       - name: Publish to npm
+        if: github.event.release.draft == false
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
